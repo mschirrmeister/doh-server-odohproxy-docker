@@ -30,7 +30,7 @@ WORKDIR $APP_HOME
 
 ENV LOCAL_PORT 3000
 
-RUN apt-get update && apt-get upgrade && apt-get install -y openssl && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get upgrade && apt-get install -y openssl ca-certificates && rm -rf /var/lib/apt/lists/*
 
 COPY --chown=0:0 --from=builder $APP_HOME/doh-proxy /usr/local/bin/doh-proxy
 
